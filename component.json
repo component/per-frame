@@ -1,0 +1,13 @@
+{
+  "name": "per-frame",
+  "repo": "component/per-frame",
+  "description": "throttle per animation frame",
+  "version": "1.0.0",
+  "dependencies": {
+    "component/raf": "*"
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "license": "MIT"
+}
