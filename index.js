@@ -1,22 +1,35 @@
+/**
+ * Module Dependencies
+ */
+
 var raf = require('raf')
 
-module.exports = function (fn, immediate) {
-  var queued = false
-  // immediate by default
-  if (immediate !== false)
-    call()
+/**
+ * Export `throttle`
+ */
 
-  return queue
+module.exports = throttle;
+
+/**
+ * Throttle by the request animation frame.
+ *
+ * @param {Function} fn
+ * @return {Function}
+ */
+
+function throttle(fn) {
+  var queued = false;
+  return queue;
 
   function queue() {
-    if (queued)
-      return
-    queued = true
-    raf(call)
-  }
+    if (queued) return;
+    queued = true;
+    var ctx = this;
+    var args = arguments;
 
-  function call() {
-    fn()
-    queued = false
+    raf(function() {
+      queued = false;
+      return fn.apply(ctx, args);
+    });
   }
 }
