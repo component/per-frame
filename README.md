@@ -5,25 +5,22 @@ Executes a function at most once per animation frame. Kind of like throttle, but
 ## Example
 
 ```js
-var throttle = require('per-frame')
-
-var el = document.querySelector('#something')
-var fn = throttle(function () {
-  el.style.width = (window.innerWidth / 2) + 'px'
-})
-window.addEventListener('resize', fn)
+editor.oninput = throttle(function(e) {
+  console.log(e.value);
+});
 ```
 
 ## API
 
-### var callback = throttle(fn, [immediate])
+### var callback = throttle(fn)
 
-`fn` is the function to be throttled. `callback` is `fn` throttled. Unless `immediate` is `false`, `fn` will be executed immediately.
+`fn` is the function to be throttled. `callback` is `fn` throttled.
 
 ## License
 
 The MIT License (MIT)
 
+Copyright (c) 2014 Matthew Mueller mattmuelle@gmail.com
 Copyright (c) 2014 Jonathan Ong me@jongleberry.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
