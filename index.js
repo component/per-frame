@@ -1,11 +1,11 @@
 /**
- * Module Dependencies
+ * Module Dependencies.
  */
 
-var raf = require('raf')
+var raf = require('raf');
 
 /**
- * Export `throttle`
+ * Export `throttle`.
  */
 
 module.exports = throttle;
