@@ -1,7 +1,7 @@
 {
   "name": "per-frame",
   "description": "throttle per animation frame",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "component": {
     "scripts": {
       "per-frame/index.js": "index.js"
