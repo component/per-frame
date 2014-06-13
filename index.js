@@ -11,17 +11,18 @@ var raf = require('raf')
 module.exports = throttle;
 
 /**
- * Throttle by the request animation frame.
+ * Executes a function at most once per animation frame. Kind of like
+ * throttle, but it throttles at ~60Hz.
  *
- * @param {Function} fn
+ * @param {Function} fn - the Function to throttle once per animation frame
  * @return {Function}
+ * @public
  */
 
 function throttle(fn) {
   var queued = false;
-  return queue;
 
-  function queue() {
+  return function queue() {
     if (queued) return;
     queued = true;
     var ctx = this;
@@ -31,5 +32,5 @@ function throttle(fn) {
       queued = false;
       return fn.apply(ctx, args);
     });
-  }
+  };
 }
