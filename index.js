@@ -20,17 +20,18 @@ module.exports = throttle;
  */
 
 function throttle(fn) {
-  var queued = false;
+  var rtn;
+  var ignoring = false;
 
   return function queue() {
-    if (queued) return;
-    queued = true;
-    var ctx = this;
-    var args = arguments;
+    if (ignoring) return rtn;
+    ignoring = true;
 
     raf(function() {
-      queued = false;
-      return fn.apply(ctx, args);
+      ignoring = false;
     });
+
+    rtn = fn.apply(this, arguments);
+    return rtn;
   };
 }
