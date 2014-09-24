@@ -5,6 +5,8 @@ Executes a function at most once per animation frame. Kind of like throttle, but
 ## Example
 
 ```js
+var throttle = require('per-frame');
+
 editor.oninput = throttle(function(e) {
   console.log(e.value);
 });
