@@ -8,7 +8,7 @@
     }
   },
   "dependencies": {
-    "component-raf": "1.1.3"
+    "component-raf": "1.2.0"
   },
   "browser": {
     "raf": "component-raf"
