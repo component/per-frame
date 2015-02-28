@@ -19,6 +19,6 @@
     "url": "https://github.com/component/per-frame.git"
   },
   "devDependencies": {
-    "zuul": "~1.10.2"
+    "zuul": "2"
   }
 }
